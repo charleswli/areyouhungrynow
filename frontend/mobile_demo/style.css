@@ -151,3 +151,22 @@
   width: 320px;
   height: 421.5px;
 }
+
+.hungryDesc {
+  position: absolute;
+  top: -10px;
+  width: 320px;
+  height: 22.5px;
+}
+
+.hungry_list {
+  position: absolute;
+  top: 90px;
+}
+
+.hungryBtn {
+  margin-top: 40px;
+  margin-left: 20px;
+  width: 274px;
+  height: 75px;
+}
