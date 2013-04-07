@@ -1,29 +1,26 @@
-from django.conf.urls.defaults import patterns, include, url
-import views
-import os
+from django.shortcuts import render_to_response
+from django.http import HttpResponse
+import helpers.yelpbusiness as yb
+import json
 
-# Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+def home(request):
+    return HttpResponse('hello world')
 
-module_dir = os.path.dirname(__file__)  # get current directory
-file_path = os.path.join(module_dir, 'helpers/sushi.json')
-f = open(file_path)
-sushi = f.readlines()
+def demo_search(request):
+    return HttpResponse('search')
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'areyouhungry.views.home', name='home'),
-    # url(r'^areyouhungry/', include('areyouhungry.foo.urls')),
+def demo_sushi(request, sushi):
+    return HttpResponse(sushi)
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-                       
-    # Uncomment the next line to enable the admin:
-                           url(r'^admin/', include(admin.site.urls)),
-                       url(r'^$', 'views.home'),
-                       url(r'^demo/search/sushi/*$', 'views.demo_sushi', {'sushi':sushi}),
-                       url(r'^demo/search/*$', 'views.demo_search'),
-                       url(r'^demo/business/yelp$', 'views.demo_yelp'),
-                       url(r'^demo/business/(?P<business>([a-z]|-)*)$', 'views.demo_business'),
-)
+def demo_business(request, business=''):
+    business_json = yb.request(business)
+    response = HttpResponse(json.dumps(business_json))
+    response["Access-Control-Allow-Origin"] = "*"  
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
+    response["Access-Control-Max-Age"] = "1000"  
+    response["Access-Control-Allow-Headers"] = "*"  
+    return response
+
+def demo_yelp(request):
+    business_json = yb.request('yelp-san-francisco')
+    return HttpResponse(json.dumps(business_json))
