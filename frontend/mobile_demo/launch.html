@@ -13,10 +13,6 @@
 </head> 
 <body style="overflow:hidden;">
 
-<!-- Background black square -->
-<div style="background-color: black;width:1000px;height:1000px;position:absolute;top:0;left:0;">
-</div>
-
 <!-- Launch -->
 <div data-role="page" id="launch" data-title="I'm Hungry">
 	<div data-role="content">
@@ -30,17 +26,20 @@
 <div data-role="page" id="meals" data-title="I'm Hungry">
 	<div data-role="content">
 
+		<!-- Black bg -->
+		<div style="background-color: black;width:1000px;height:10px;position:absolute;top:0;left:0;"></div>
+		<img class='header' src="images/cut/header.png" alt=""/>
+		
 		<div class='event_list'>
 			<ul>
 				<li><img class='event' src="images/cut/event1.png" alt=""></li>
-				<li><img class='event' src="images/cut/event1.png" alt=""></li>
+				<a href="#restaurants" data-transition="slidefade"><li><img class='event' src="images/cut/event1.png" alt=""></li></a>
 				<li><img class='event' src="images/cut/event1.png" alt=""></li>
 				<li><img class='event' src="images/cut/event1.png" alt=""></li>
 				<li><img class='event' src="images/cut/event1.png" alt=""></li>
 			</ul>
 		</div>
 
-		<img class='header' src="images/cut/header.png" alt=""/>
 		<img class='tab_bar' src="images/cut/tab_bar.png" alt=""/>
 		<img class='hungry_button_unselected'src="images/cut/hungry_button_unselected.png" alt="">
 		<img class='hungry_button_selected'src="images/cut/hungry_button_selected.png" alt="">
@@ -51,6 +50,28 @@
 	</div><!-- /content -->
 </div><!-- /page -->
 
+<!-- Restaurant list -->
+<div data-role="page" id="restaurants" data-title="Where to Eat?">
+	<div data-role="content">
+
+		<!-- Black bg -->
+		<div style="background-color: black;width:1000px;height:10px;position:absolute;top:0;left:0;"></div>
+		<a href="#meals" data-transition="slidefade" data-direction="reverse"><img class='header' src="images/cut/restaurantTitle.png" alt=""/></a>
+		
+		<div class='restaurant_list'>
+			<ul>
+				<a href="#restaurants" data-transition="slidefade"><li><img class='event' src="images/cut/event1.png" alt=""></li></a>
+			</ul>
+		</div>
+
+		<img class='tab_bar' src="images/cut/tab_bar.png" alt=""/>
+		<img class='hungry_button_unselected'src="images/cut/hungry_button_unselected.png" alt="">
+		<img class='hungry_button_selected'src="images/cut/hungry_button_selected.png" alt="">
+		<img class='feed_icon' src="images/cut/feed_icon.png" alt="">
+		<img class='friends_icon' src="images/cut/friends_icon.png" alt="">
+
+	</div><!-- /content -->
+</div><!-- /page -->
 
 <script>
 	$('[data-role=content]').css('padding', 0).height($(window).height()).css('overflow', 'hidden');
