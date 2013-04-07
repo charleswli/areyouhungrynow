@@ -16,7 +16,7 @@
 <div data-role="page" id="meals" data-title="I'm Hungry">
 	<div data-role="content">
 
-		<img src="images/cut/splash.png" alt="bg"/>
+		<a id='splash' href="index.html" rel="external"><img src="images/cut/splash.png" alt="bg"/></a>
 
 	</div><!-- /content -->
 </div><!-- /page -->
@@ -24,6 +24,22 @@
 <script>
 	$('[data-role=content]').css('padding', 0).height($(window).height()).css('overflow', 'hidden');
 	$('[data-role=content]').find('img').width($(window).width());
+	$('a').click(function(event) {
+		$link = $(this);
+		console.log($link.attr('href'));
+		// Prevent the usual navigation behavior
+		event.preventDefault();
+
+		// Alter the url according to the anchor's href attribute, and
+		// store the data-foo attribute information with the url
+		$.mobile.navigate( $link.attr( "href" ), {
+			foo: $link.attr("data-foo")
+		});
+
+		// Hypothetical content alteration based on the url. E.g, make
+		// an AJAX request for JSON data and render a template into the page.
+		alterContent( this.attr("href") );
+	});
 </script>
 </body>
 </html>
