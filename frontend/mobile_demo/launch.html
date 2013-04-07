@@ -11,36 +11,58 @@
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
 </head> 
-<body> 
+<body style="overflow:hidden;">
 
-<div data-role="page" id="meals" data-title="I'm Hungry">
+<!-- Background black square -->
+<div style="background-color: black;width:1000px;height:1000px;position:absolute;top:0;left:0;">
+</div>
+
+<!-- Launch -->
+<div data-role="page" id="launch" data-title="I'm Hungry">
 	<div data-role="content">
 
-		<a id='splash' href="index.html" rel="external"><img src="images/cut/splash.png" alt="bg"/></a>
+		<a href="#meals" data-transition="fade"><img id='splash' src="images/cut/splash.png" alt="bg"/></a>
 
 	</div><!-- /content -->
 </div><!-- /page -->
 
+<!-- Meals -->
+<div data-role="page" id="meals" data-title="I'm Hungry">
+	<div data-role="content">
+
+		<div class='event_list'>
+			<ul>
+				<li><img class='event' src="images/cut/event1.png" alt=""></li>
+				<li><img class='event' src="images/cut/event1.png" alt=""></li>
+				<li><img class='event' src="images/cut/event1.png" alt=""></li>
+				<li><img class='event' src="images/cut/event1.png" alt=""></li>
+				<li><img class='event' src="images/cut/event1.png" alt=""></li>
+			</ul>
+		</div>
+
+		<img class='header' src="images/cut/header.png" alt=""/>
+		<img class='tab_bar' src="images/cut/tab_bar.png" alt=""/>
+		<img class='hungry_button_unselected'src="images/cut/hungry_button_unselected.png" alt="">
+		<img class='hungry_button_selected'src="images/cut/hungry_button_selected.png" alt="">
+		<img class='feed_icon' src="images/cut/feed_icon.png" alt="">
+		<img class='friends_icon' src="images/cut/friends_icon.png" alt="">
+
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+
 <script>
 	$('[data-role=content]').css('padding', 0).height($(window).height()).css('overflow', 'hidden');
-	$('[data-role=content]').find('img').width($(window).width());
-	$('a').click(function(event) {
-		$link = $(this);
-		console.log($link.attr('href'));
-		// Prevent the usual navigation behavior
-		event.preventDefault();
 
-		// Alter the url according to the anchor's href attribute, and
-		// store the data-foo attribute information with the url
-		// $.mobile.navigate( $link.attr( "href" ), {
-		// 	foo: $link.attr("data-foo")
-		// });
-		$.mobile.changePage($link.attr( "href" ));
-
-		// Hypothetical content alteration based on the url. E.g, make
-		// an AJAX request for JSON data and render a template into the page.
-		alterContent( this.attr("href") );
+	$('.hungry_button_unselected').hover(function() {
+		$('.hungry_button_selected').css('visibility', 'visible');
 	});
+	$('.hungry_button_selected').on('mouseout', function() {
+		$('.hungry_button_selected').css('visibility', 'hidden');
+	});
+
+	// $('[data-role=content]').find('img').width($(window).width());
 </script>
 </body>
 </html>

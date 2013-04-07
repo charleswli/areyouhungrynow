@@ -2,6 +2,11 @@
 [data-role=page] {
 	height:100%!important;
 	position:relative!important;
+  background-color: black;
+}
+
+[data-role=content] {
+  background-color: black;
 }
 
 [data-role=footer] {
@@ -47,4 +52,71 @@
 
 #business-contents {
   padding-top: 20px;
+}
+
+#splash {
+  cursor: pointer;
+  width: 321px;
+  height: 570px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 321px;
+  height: 45px;
+}
+
+.hungry_button_selected {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 95px;
+  width: 138px;
+  height: 79px;
+  visibility: hidden;
+}
+.hungry_button_unselected {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 96px;
+  width: 136px;
+  height: 78.5px;
+}
+
+.tab_bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 321px;
+  height: 50px;
+}
+
+.feed_icon {
+  position: absolute;
+  bottom: 5px;
+  left: 36px;
+  width: 28px;
+  height: 40.5px;
+}
+
+.friends_icon {
+  position: absolute;
+  bottom: 5px;
+  left: 255px;
+  width: 42.5px;
+  height: 38px;
+}
+
+.event_list {
+  position: absolute;
+  top: 45px;
+  height: 476px;
+}
+
+.event {
+  width: 320px;
+  height: 103.5px;
 }
