@@ -8,19 +8,20 @@
 
 	<!-- jQuery -->
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="demo.js"></script>
 </head> 
 <body>
 	<div id='bg'>
 		<div id='content'>
-			<div id='iphone'></div>
-			<iframe id="screen" src="launch.html"></iframe>
+			<div id='iphone' class="iphone-image">
+        <iframe class="screen" src="launch.html"></iframe>
+      </div>
+			<div id='iphone2' class="iphone-image">
+        <iframe class="screen" src="launch.html"></iframe>
+      </div>
 		</div>
 	</div>
 
-	<script>
-		var wid = 879;
-		var hei = 1697;
-		$('#iphone').width(wid/2).height(hei/2);
-	</script>
+   <div id="addPhone"></div>
 </body>
 </html>
