@@ -20,3 +20,31 @@
 .vertical button {
 	position: absolute;
 }
+
+#map-canvas {
+  width: 150px;
+  height: 150px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#business-info {
+  padding: 20px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+#business-contents {
+  padding-top: 20px;
+}

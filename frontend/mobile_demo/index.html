@@ -12,6 +12,13 @@
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="script.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+      <script type="text/javascript"
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ312ds8HgqvfpNQoBp1ypiInDTlE3CAY&sensor=false">
+      </script>
+
+	<script src="lib/handlebars.js"></script>
+	<script src="script/Helper.js"></script>
+	<script src="script/business.js"></script>
 </head> 
 <body> 
 
@@ -44,6 +51,17 @@
 
 </div><!-- /page -->
 
+<div id="business" data-role="page">
+  <div data-role="content" id="business-contents">
+    <div id="map-canvas" class="left">
+    </div>
+    <div id="business-details" class="left">
+    </div>
+    <div id="business-info" class="clear">
+    </div>
+  </div>
+</div>
+
 <div id="meals" data-title="Meals" data-role="page">
 
 	<div data-role="header">
@@ -52,13 +70,11 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-
-
 		<ul data-role="listview" data-inset="true" data-filter="true">
-			<li>
-				<h1>Brendan</h1>
-				<p>@ John's Bar</p>
-			</li>
+      <li>
+        <h1>Brendan</h1>
+        <p>@ John's Bar</p>
+      </li>
 			<li>
 				<h1>Grant</h1>
 				<p>@ Subway</p>
@@ -94,5 +110,31 @@
 	</div><!-- /footer -->
 
 </div><!-- /page -->
+
+<script id="businessDetailsTemplate" type="text/x-handlebars-template">
+  <div>
+    {{name}}
+  </div>
+  <img src="{{rating_img_url}}"/>
+  <div>
+    {{displayList location.display_address}}
+  </div>
+</script>
+
+<script id="businessInfoTemplate" type="text/x-handlebars-template">
+  <a data-role="button">EAT WITH THIS GUY (render me as a template!)</a>
+  <div>
+    blah blah blah
+  </div>
+</script>
+
+<script id="pageHeader" type="text/x-handlebars-template">
+  <div data-role="header" role="page" class="ui-header ui-bar-a">
+    <h1 class="ui-title" role="heading" aria-level="1">
+      {{name}}
+    </h1>
+  </div>
+</script>
+
 </body>
 </html>
