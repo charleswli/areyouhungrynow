@@ -28,5 +28,11 @@ def business_all(request):
     return response_xdomain_access(str(return_json))
 
 def business_single(request, business):
-    businesses = models.Business.objects.all()
-    return HttpResponse(str(businesses))
+    b = models.Business.objects.filter(yelp_id=business)
+    response = ''
+    if b:
+        response = b[0].json_data.encode('utf-8')
+    else:
+        response = 'error'
+
+    return response_xdomain_access(str(response))
