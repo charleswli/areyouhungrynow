@@ -127,6 +127,12 @@
   height: 103.5px;
 }
 
+.event_none {
+  position: absolute;
+  top: 70px;
+  height: 17.5px;
+}
+
 /* Restaurant Search */
 .restaurant_list {
   overflow: scroll;
@@ -152,6 +158,14 @@
   height: 421.5px;
 }
 
+.mapJoin {
+  overflow: hidden;
+  position: absolute;
+  top: 45px;
+  width: 320px;
+  height: 526.5px;
+}
+
 .hungryDesc {
   position: absolute;
   top: -10px;
@@ -166,7 +180,12 @@
 
 .hungryBtn {
   margin-top: 40px;
-  margin-left: 20px;
+  margin-left: 22px;
   width: 274px;
   height: 75px;
+}
+
+.full-screen {
+  width: 321px;
+  height: 570px;
 }
