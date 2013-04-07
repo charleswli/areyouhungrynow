@@ -10,10 +10,37 @@
 	<!-- jQuery -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<script src="script.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<script src="script.js"></script>
 </head> 
 <body> 
+
+<div data-role="page" id="launch" data-title="I'm Hungry">
+	<div data-role="header">
+		<a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
+		<h1>I'm Hungry</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<ul class="vertical">		
+			<li class="vertical_button"><a href="#meals" data-role="button">
+
+				I'm hungry.</a></li>
+			<li class="vertical_button"><a href="#meals" data-role="button">I'm really hungry.</a></li>
+			<li class="vertical_button"><a href="#meals" data-role="button">I'm really fucking hungry.</a></li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer">		
+		<div data-role="navbar" data-iconpos="top">
+			<ul>
+				<li><a href="#meals">Meals</a></li>
+				<li><a href="#hungry" data-icon="star" class="ui-btn-active ui-state-persist">I'm hungry</a></li>
+				<li><a href="#friends">Friends</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+</div><!-- /page -->
 
 <div data-role="page" id="hungry" data-title="Are you hungry?">
 
@@ -41,10 +68,9 @@
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
-
 </div><!-- /page -->
 
-<div id="meals" data-title="Meals" data-role="page">
+<div data-role="page" id="meals" data-title="Meals">
 
 	<div data-role="header">
 		<a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
@@ -92,7 +118,7 @@
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
-
 </div><!-- /page -->
+
 </body>
 </html>

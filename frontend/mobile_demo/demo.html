@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="demo.css">
+
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head> 
+<body>
+	<div id='bg'>
+		<div id='content'>
+			<div id='iphone'></div>
+			<!-- <img id="iphone" src="images/cut/iphone_5_cutout.png" alt=""> -->
+			<iframe id="screen" src="launch.html"></iframe>
+		</div>
+	</div>
+
+	<script>
+		var wid = 879;
+		var hei = 1697;
+		$('#iphone').width(wid/2).height(hei/2);
+	</script>
+</body>
+</html>
