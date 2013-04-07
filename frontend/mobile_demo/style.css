@@ -110,6 +110,8 @@
   height: 38px;
 }
 
+/* Event Feed */
+
 .event_list {
   overflow: scroll;
   position: absolute;
@@ -123,4 +125,29 @@
 .event {
   width: 321px;
   height: 103.5px;
+}
+
+/* Restaurant Search */
+.restaurant_list {
+  overflow: scroll;
+  position: absolute;
+  top: 45px;
+  height: 476px;
+}
+
+.restaurant_list li {
+  margin-bottom: 3px;
+}
+
+.restaurant {
+  width: 321px;
+  height: 397px;
+}
+
+.map {
+  overflow: scroll;
+  position: absolute;
+  top: 45px;
+  width: 320px;
+  height: 421.5px;
 }
