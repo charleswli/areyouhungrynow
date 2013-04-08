@@ -4,7 +4,7 @@ html, body {
 }
 body {
 	position: relative;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 body {
 	background-image:url('images/cut/iphone_bg.jpeg');
