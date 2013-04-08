@@ -14,12 +14,12 @@ $(document).ready(function () {
 
   $('#addPhone').click(function () {
     $('#iphone').animate({
-      left: getWindowPosition(0.76),
+      left: getWindowPosition(0.66),
       easing: 'easeOutExpo'
     }, {
       complete : function () {
           $('#iphone2').animate({
-            left: getWindowPosition(0.23),
+            left: getWindowPosition(0.33),
             easing: 'easeOutExpo'
           });
         }
