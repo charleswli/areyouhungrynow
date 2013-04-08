@@ -8,6 +8,8 @@ body {
 }
 body {
 	background-image:url('images/cut/iphone_bg.jpeg');
+  background-size:100% 100%;
+  background-repeat:repeat;
 }
 #iphone {
   position: absolute;
